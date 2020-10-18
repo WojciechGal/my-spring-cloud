@@ -2,8 +2,22 @@ server:
   port: 9180
 
 # This public key will be used for verifying incoming JWT tokens
+# Normal generation from jks file with OpenSSL for Linux / http://phpseclib.sourceforge.net/x509/decoder.php for Windows
 security:
   oauth2:
     resource:
       jwt:
         keyValue: |
+          -----BEGIN RSA PUBLIC KEY-----
+          MIICCgKCAgEAjxQXXsLCOixHoJn+jqoAMH3twYS14szFqR7eB1vMHkmW25RWhXM6
+          +RnpjMXZQdZkw9qjLhIR2NjKqEwXCFXIIs6/DT6I0mZwVpu1N0H3eRG+t6VLiPgE
+          sUAB61cDqh+tk22linxIyGIvs7ON37NjypBCPQyteYKzBAhEsImriraEior60tYr
+          iE8znQMeT8CfzhOYf9s3IPlKeVtM7ZbaRRinfq/bF/ZOWV4Zv/+IBT+ONcJdpxt1
+          Bo1kHuezp3TQeW+xdALcGOSlXYiD2CJ550GARbQM7gfjMyYtSYROyoqHTZdtf1dO
+          waupiEMJF/GI20EimSYXH84Z5WhzcPiqFM294A2lVy31/KV54/w8leToMQLOYYcp
+          JDLDarEgVlpC0ppX76AIoXu/yO1BZv1hd/6PsCix2IWuiarKhnI6+BkZkMQlMkbl
+          Nbds08IBO4iE+JXQWX1QYIafIJAmBXTuXUjK9FhIUjpZp6W0cZGL9x8sRloV08nL
+          A1V1RQ4XEoUNMXtLjAwcLDd/TRBTXPPU8uRflInpXVDxTOJOIlCY2ZZUcd5/NQ4c
+          o2AWlObEWnxyhFHBkcR0MsTbGGIMnk3F2Bw1ueLKtGFcpQxVCFr4rsU5xoRpW60E
+          Mw+1T5ElSTaN4VZrsMJMR9rDfaGC0O0n4bcXHZNWwuMRfs6bARE9lBECAwEAAQ==
+          -----END RSA PUBLIC KEY-----
