@@ -21,7 +21,7 @@ public class ClientSecurityConfigurer extends WebSecurityConfigurerAdapter {
         http.antMatcher("/**")
                 .authorizeRequests()
                 .antMatchers("/")
-                .not().authenticated()
+                .permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()

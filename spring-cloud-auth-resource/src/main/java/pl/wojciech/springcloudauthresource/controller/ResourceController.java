@@ -18,6 +18,6 @@ public class ResourceController {
     @GetMapping("/role")
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public String role() {
-        return "You're either user or admin";
+        return "Hello!";
     }
 }
