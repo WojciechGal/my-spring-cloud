@@ -1,0 +1,11 @@
+server:
+  port: 8182
+security:
+  oauth2:
+    client:
+      accessTokenUri: http://localhost:7180/authserver/oauth/token
+      userAuthorizationUri: http://localhost:7180/authserver/oauth/authorize
+      clientId: auth-server
+      clientSecret: pass16
+    resource:
+      userInfoUri: http://localhost:9180/user

@@ -1,0 +1,12 @@
+server:
+  port: 7180
+  servlet:
+    context-path: /authserver
+jwt:
+  certificate:
+    store:
+      file: classpath:/certificate/auth-server.jks
+      password: pass14
+    key:
+      alias: auth-server-key
+      password: auth-server-key

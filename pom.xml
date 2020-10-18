@@ -18,6 +18,9 @@
     <modules>
         <module>spring-cloud-config-server</module>
         <module>spring-cloud-client</module>
+        <module>spring-cloud-auth-server</module>
+        <module>spring-cloud-auth-resource</module>
+        <module>spring-cloud-client-2</module>
     </modules>
 
     <properties>
