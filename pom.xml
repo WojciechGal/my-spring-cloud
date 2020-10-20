@@ -21,6 +21,7 @@
         <module>spring-cloud-auth-server</module>
         <module>spring-cloud-auth-resource</module>
         <module>spring-cloud-client-2</module>
+        <module>spring-cloud-client-3</module>
     </modules>
 
     <properties>
