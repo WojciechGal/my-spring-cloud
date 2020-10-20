@@ -22,7 +22,7 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .antMatchers("/login**").permitAll()
                 .anyRequest().authenticated()
                 .and().csrf()
-                .and().formLogin().loginPage("/login");
+                .and().formLogin();
     }
 
     @Override
