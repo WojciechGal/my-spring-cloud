@@ -12,6 +12,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import pl.wojciech.springcloudclient3.model.LogMessage;
 
+import java.util.Objects;
+
 import static org.junit.Assert.assertEquals;
 
 @SpringBootTest
@@ -23,6 +25,7 @@ class SpringCloudClient3ApplicationTests {
     @Autowired
     private Processor pipe;
 
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private MessageCollector messageCollector;
 
@@ -36,9 +39,9 @@ class SpringCloudClient3ApplicationTests {
                 .send(MessageBuilder.withPayload(new LogMessage("Hello!"))
                         .build());
 
-        Object payload = messageCollector
+        Object payload = Objects.requireNonNull(messageCollector
                 .forChannel(pipe.output())
-                .poll()
+                .poll())
                 .getPayload();
 
         assertEquals("{\"message\":\"[1]: Hello!\"}", payload.toString());
