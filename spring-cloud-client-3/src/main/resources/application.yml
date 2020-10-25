@@ -1,4 +1,8 @@
 spring:
+  #this props are pointing to rabbit address, which is being used by health connection
+  rabbitmq:
+    host: 192.168.99.100
+    port: 5672
   cloud:
     stream:
       bindings:
@@ -15,7 +19,7 @@ spring:
           environment:
             spring:
               rabbitmq:
-                host: localhost
+                host: 192.168.99.100
                 port: 5672
                 username: guest
                 password: guest

@@ -1,5 +1,6 @@
 package pl.wojciech.springcloudclient3;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
@@ -13,13 +14,14 @@ import pl.wojciech.springcloudclient3.model.LogMessage;
 
 @SpringBootApplication
 @EnableBinding(Processor.class)
+@Slf4j
 public class SpringCloudClient3Application {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringCloudClient3Application.class, args);
     }
 
-    //todo check: health, 5672 connection, messageconverter to text plain, group of input
+    //todo check: health
 
     @Bean
     public MessageConverter providesTextPlainMessageConverter() {
@@ -28,8 +30,9 @@ public class SpringCloudClient3Application {
 
     @StreamListener(Processor.INPUT)
     @SendTo(Processor.OUTPUT)
-    public LogMessage enrichLogMessage(LogMessage log) {
-        return new LogMessage(String.format("[1]: %s", log.getMessage()));
+    public LogMessage enrichLogMessage(LogMessage logMessage) {
+        log.info(logMessage.getMessage());
+        return new LogMessage(String.format("[1]: %s", logMessage.getMessage()));
     }
 
 }
