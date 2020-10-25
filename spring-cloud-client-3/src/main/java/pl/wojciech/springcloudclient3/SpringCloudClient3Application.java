@@ -21,8 +21,6 @@ public class SpringCloudClient3Application {
         SpringApplication.run(SpringCloudClient3Application.class, args);
     }
 
-    //todo check: health
-
     @Bean
     public MessageConverter providesTextPlainMessageConverter() {
         return new TextPlainMessageConverter();
