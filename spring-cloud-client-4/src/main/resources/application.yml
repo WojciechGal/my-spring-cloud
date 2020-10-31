@@ -8,7 +8,7 @@ spring:
     password:
   jpa:
     hibernate:
-      # does not work in this project
+      #does not work in this project (hibernate is managed in dependencies)
       ddl-auto: create-drop
     properties:
       hibernate:
